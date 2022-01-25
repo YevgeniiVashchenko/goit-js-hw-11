@@ -37,6 +37,7 @@ async function fetchPhoto() {
     }
 
     if (photoApiService.getPage() === 1) {
+      refs.loadMoreBtn.style.display = 'block';
       Notify.success(`Hooray! We found ${totalHits} images.`);
     }
     photoMarkup(hits);
@@ -68,6 +69,7 @@ function loadMore() {
 
 function clearPhotoCardContainer() {
   refs.cardContainer.innerHTML = '';
+  refs.loadMoreBtn.style.display = 'none';
 }
 
 function simpleLightbox() {
